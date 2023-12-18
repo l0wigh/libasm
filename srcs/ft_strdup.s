@@ -13,14 +13,11 @@ ft_malloc:
 	mov		rax, 9			; mmap syscall
 	syscall
 	ret
-
 ft_strdup:
 	call	ft_strlen		; get string len
 	inc		rax				; rax+1 for null char
-
 	push	rdi				; preserve the string that needs to be copied
 	call	ft_malloc		; go to mmap (because why I should use a C function ?)
-
 	mov		rdi, rax		; used as copy pointer, will be "destroyed"
 	pop		rsi				; get the input back as the source
 	call	ft_strcpy		; copy into newly allocated memory

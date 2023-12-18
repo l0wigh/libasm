@@ -6,5 +6,5 @@ int main(void)
 	char *str2;
 
 	str2 = ft_strdup(str1);
-	printf("%s\n", str2);
+	printf("Duplicated string : %s\n", str2);
 }
