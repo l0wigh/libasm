@@ -8,6 +8,7 @@ ft_read:
 	jc		_error				; jump if error
 	ret							; return
 _error:
+	neg		rax					; rax = !rax
 	mov		rbx, rax			; keep errno value
 	call	__errno_location	; get errno address
 	mov		[rax], rbx			; errno value = rbx
